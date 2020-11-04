@@ -1,0 +1,39 @@
+﻿@model IEnumerable<blog_template_practice.Models.Content>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/Styles/Styles.css" rel="stylesheet" />
+    <link href="/Styles/utilities.css" rel="stylesheet" />
+    <title>All Blogs</title>
+</head>
+<body>
+    <header class="hero">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="/Category/Index">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+    @foreach (var blog in Model)
+    {
+        <section class="post">
+            <h2>@blog.Title</h2>
+            <p class="head">
+                Posted by <strong>@blog.Author</strong> | @blog.PublishDate
+            </p>
+            <p>@blog.Body</p>
+        </section>
+    }
+    </main>
+</body>
+</html>

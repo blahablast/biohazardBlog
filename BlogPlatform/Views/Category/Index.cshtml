@@ -1,0 +1,50 @@
+﻿@model IEnumerable<blog_template_practice.Models.Category>
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/Styles.css" rel="stylesheet" />
+    <link href="~/Styles/utilities.css" rel="stylesheet" />
+    <title>Welcome to Spencer Mansion</title>
+</head>
+<body>
+    <header class="hero">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="/Content/Index">All Blogs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        @foreach (var category in Model)
+        {
+            <article class="flex-columns flex-@category.Id">
+                <div class="row">
+                    <div class="column">
+                        <div class="column-1">
+                            <img src="/Images/@category.Image" alt="category images" />
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="column-2 bg-dark">
+                            <h2>@category.Name</h2>
+                            <a href="/Category/Details/@category.Id" class="btn">Enter Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        }
+    </main>
+
+</body>
+</html>

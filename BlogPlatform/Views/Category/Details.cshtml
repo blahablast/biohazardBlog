@@ -1,0 +1,44 @@
+﻿@model blog_template_practice.Models.Category
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/Styles/styles.css" rel="stylesheet" />
+    <link href="/Styles/utilities.css" rel="stylesheet" />
+    <title>Inside the blog</title>
+</head>
+<body style="background-image: linear-gradient(to right bottom, #0d0d0d, #949494);">
+    <header class="hero">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="/Category/Index">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        @foreach (var detail in Model.Contents)
+        {
+        <section class="post">
+            <h2>@detail.Title</h2>
+            <p class="head">
+                Posted by <strong>@detail.Author</strong> | @detail.PublishDate
+            </p>
+            <p>@detail.Body</p>
+            <div class="buttons">
+                <a href="/Content/Create" class="btn blog-btn">Create Blog</a>
+                <a href="/Content/Update/@detail.Id" class="btn blog-btn">Update Blog</a>
+                <a href="/Content/Delete/@detail.Id" class="btn blog-btn">Delete Blog</a>
+            </div>
+        </section>
+        }
+    </main>
+</body>
+</html>

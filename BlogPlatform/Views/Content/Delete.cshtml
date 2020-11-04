@@ -1,0 +1,88 @@
+﻿@model blog_template_practice.Models.Content
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/Styles/Styles.css" rel="stylesheet" />
+    <link href="/Styles/utilities.css" rel="stylesheet" />
+    <link href="/Styles/form.css" rel="stylesheet" />
+    <title>Delete</title>
+</head>
+<body>
+    <header class="hero">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="/Category/Index">Home</a></li>
+                    <li><a asp-action="Index">All Blogs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="contact flex-columns">
+        <div class="row">
+            <div class="column">
+                <div class="column-1">
+                    <img src="/Images/mia.jpg" alt="evil mia" />
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-2 bg-dark">
+                    <h2>Delete Blog</h2>
+                    <div>
+                        <dl class="main-form">
+                            @*<dt class="control-label">
+                                @Html.DisplayNameFor(model => model.Id)
+                            </dt>
+                            <dd class="control-form">
+                                @Html.DisplayFor(model => model.Id)
+                            </dd>*@
+                            <dt class="control-label">
+                                @Html.DisplayNameFor(model => model.Title)
+                            </dt>
+                            <dd class="control-label">
+                                @Html.DisplayFor(model => model.Title)
+                            </dd>
+                            <dt class="control-label">
+                                @Html.DisplayNameFor(model => model.Body)
+                            </dt>
+                            <dd class="control-label">
+                                @Html.DisplayFor(model => model.Body)
+                            </dd>
+                            <dt class="control-label">
+                                @Html.DisplayNameFor(model => model.Author)
+                            </dt>
+                            <dd class="control-label">
+                                @Html.DisplayFor(model => model.Author)
+                            </dd>
+                            <dt class="control-label">
+                                @Html.DisplayNameFor(model => model.PublishDate)
+                            </dt>
+                            <dd class="control-label">
+                                @Html.DisplayFor(model => model.PublishDate)
+                            </dd>
+                            <dt class="control-label">
+                                @Html.DisplayNameFor(model => model.CategoryId)
+                            </dt>
+                            <dd class="control-label">
+                                @Html.DisplayFor(model => model.CategoryId)
+                            </dd>
+                        </dl>
+                        <form asp-action="Delete">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
